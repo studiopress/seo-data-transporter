@@ -2,9 +2,9 @@
 Contributors: nathanrice, studiopress
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5553118
 Tags: seo, genesis, genesiswp, thesis, thesiswp, headway, headwaywp, builder, frugal, hybrid, woothemes, all in one seo, headspace, platinum seo
-Requires at least: 3.0.1
-Tested up to: 3.0.1
-Stable tag: 0.9.4
+Requires at least: 3.0
+Tested up to: 3.0.4
+Stable tag: 0.9.5
 
 This plugin allows you to transfer your inputs SEO data from one theme/plugin to another.
 
@@ -17,6 +17,7 @@ Just choose what platform your moving away from, and what platform you want to m
 **Supported Themes**
 
 * Builder
+* Catalyst
 * Frugal
 * Genesis
 * Headway
@@ -29,6 +30,7 @@ Just choose what platform your moving away from, and what platform you want to m
 * All in One SEO
 * Headspace2
 * Platinum SEO
+* SEO Ultimate
 * WordPress SEO
 
 == Installation ==
@@ -46,7 +48,7 @@ Probably. If it is a paid theme or plugin, the author will have to provide a cop
 
 = How stable is this plugin? I don't want to lose all my SEO. =
 
-It's relatively stable, but is still in beta. Be sure to make a proper database backup before converting.
+It's relatively stable. This plugin has been in the repository since August, 2010, and no one has reported any problems. As always, be sure to keep a backup of your site, just to be safe.
 
 == Screenshots ==
 1. The SEO Data Transporter UI, including the dropdown with all the supported platforms 
@@ -69,3 +71,6 @@ It's relatively stable, but is still in beta. Be sure to make a proper database 
 
 = 0.9.4 =
 * Fixed bug with Yoast's WordPress SEO fields
+
+= 0.9.5 =
+* Added support for the Catalyst theme, and the SEO Ultimate plugin

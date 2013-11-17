@@ -3,7 +3,7 @@
 Plugin Name:	SEO Data Transporter
 Plugin URI:		http://www.studiopress.com/plugins/seo-data-transporter
 Description:	Helps you transfer post/page specific SEO data, like custom doctitles, custom META descriptions and keywords, etc., from one platform (theme or plugin) to another.
-Version:		0.9.4
+Version:		0.9.5
 Author:			Nathan Rice
 Author URI:		http://www.nathanrice.net/
 */
@@ -19,6 +19,14 @@ $_seodt_themes = array(
 		'Custom Doctitle' => '_builder_seo_title',
 		'META Description' => '_builder_seo_description',
 		'META Keywords' => '_builder_seo_keywords',
+	),
+	'Catalyst' => array(
+		'Custom Doctitle' => '_catalyst_title',
+		'META Description' => '_catalyst_description',
+		'META Keywords' => '_catalyst_keywords',
+		'noindex' => '_catalyst_noindex',
+		'nofollow' => '_catalyst_nofollow',
+		'noarchive' => '_catalyst_noarchive'
 	),
 	'Frugal' => array(
 		'Custom Doctitle' => '_title',
@@ -82,6 +90,13 @@ $_seodt_plugins = array(
 		'Custom Doctitle' => 'title',
 		'META Description' => 'description',
 		'META Keywords' => 'keywords',
+	),
+	'SEO Ultimate' => array(
+		'Custom Doctitle' => '_su_title',
+		'META Description' => '_su_description',
+		'META Keywords' => '_su_keywords',
+		'noindex' => '_su_meta_robots_noindex',
+		'nofollow' => '_su_meta_robots_nofollow'
 	),
 	'WordPress SEO' => array(
 		'Custom Doctitle' => '_yoast_wpseo_title',

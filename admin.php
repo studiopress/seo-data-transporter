@@ -59,14 +59,14 @@ function seodt_action() {
 	
 	printf( '<h3>%s</h3>', __('Conversion Results', 'seodt') );
 	
-	$result = seodt_post_meta_convert( $_REQUEST['platform_old'], $_REQUEST['platform_new'] );
+	$result = seodt_post_meta_convert( stripslashes($_REQUEST['platform_old']), stripslashes($_REQUEST['platform_new']) );
 	if ( is_wp_error( $result ) ) {
 		printf( '<p>%s</p>', __('Sorry, something went wrong. Please try again') );
 		return;
 	}
 	
-	printf( '<p><b>%d</b> Records were updated</p>', $result->updated );
-	printf( '<p><b>%d</b> Records were ignored</p>', $result->ignored );
+	printf( '<p><b>%d</b> Records were updated</p>', isset( $result->updated ) ? $result->updated : 0 );
+	printf( '<p><b>%d</b> Records were ignored</p>', isset( $result->ignored ) ? $result->ignored : 0 );
 	
 	return;
 	

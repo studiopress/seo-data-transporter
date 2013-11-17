@@ -3,7 +3,7 @@
 Plugin Name:	SEO Data Transporter
 Plugin URI:		http://www.studiopress.com/plugins/seo-data-transporter
 Description:	Helps you transfer post/page specific SEO data, like custom doctitles, custom META descriptions and keywords, etc., from one platform (theme or plugin) to another.
-Version:		0.9.5
+Version:		0.9.6
 Author:			Nathan Rice
 Author URI:		http://www.nathanrice.net/
 */
@@ -80,11 +80,20 @@ $_seodt_plugins = array(
 		'META Description' => '_aioseop_description',
 		'META Keywords' => '_aioseop_keywords',
 	),
+	'Greg\'s High Performance SEO' => array(
+		'Custom Doctitle' => '_ghpseo_secondary_title',
+		'META Description' => '_ghpseo_alternative_description',
+		'META Keywords' => '_ghpseo_keywords',
+	),
 	'Headspace2' => array(
 		'Custom Doctitle' => '_headspace_page_title',
 		'META Description' => '_headspace_description',
 		'META Keywords' => '_headspace_keywords',
 		'Custom Scripts' => '_headspace_scripts'
+	),
+	'Meta SEO Pack' => array(
+		'META Description' => '_msp_description',
+		'META Keywords' => '_msp_keywords',
 	),
 	'Platinum SEO' => array(
 		'Custom Doctitle' => 'title',
@@ -101,6 +110,7 @@ $_seodt_plugins = array(
 	'WordPress SEO' => array(
 		'Custom Doctitle' => '_yoast_wpseo_title',
 		'META Description' => '_yoast_wpseo_metadesc',
+		'META Keywords' => '_yoast_wpseo_metakeywords',
 		'noindex' => '_yoast_wpseo_meta-robots-noindex',
 		'nofollow' => '_yoast_wpseo_meta-robots-nofollow',
 		'Canonical URI' => '_yoast_wpseo_canonical',

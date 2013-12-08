@@ -3,7 +3,7 @@
 Plugin Name:	SEO Data Transporter
 Plugin URI:		http://www.studiopress.com/plugins/seo-data-transporter
 Description:	Helps you transfer post/page specific SEO data, like custom doctitles, custom META descriptions and keywords, etc., from one platform (theme or plugin) to another.
-Version:		0.9.8
+Version:		0.9.9
 Author:			Nathan Rice
 Author URI:		http://www.nathanrice.net/
 */
@@ -26,14 +26,14 @@ $_seodt_themes = array(
 		'META Keywords' => '_catalyst_keywords',
 		'noindex' => '_catalyst_noindex',
 		'nofollow' => '_catalyst_nofollow',
-		'noarchive' => '_catalyst_noarchive'
+		'noarchive' => '_catalyst_noarchive',
 	),
 	'Frugal' => array(
 		'Custom Doctitle' => '_title',
 		'META Description' => '_description',
 		'META Keywords' => '_keywords',
 		'noindex' => '_noindex',
-		'nofollow' => '_nofollow'	
+		'nofollow' => '_nofollow',
 	),
 	'Genesis' => array(
 		'Custom Doctitle' => '_genesis_title',
@@ -44,17 +44,17 @@ $_seodt_themes = array(
 		'noarchive' => '_genesis_noarchive',
 		'Canonical URI' => '_genesis_canonical_uri',
 		'Custom Scripts' => '_genesis_scripts',
-		'Redirect URI' => 'redirect'
+		'Redirect URI' => 'redirect',
 	),
 	'Headway' => array(
 		'Custom Doctitle' => '_title',
 		'META Description' => '_description',
-		'META Keywords' => '_keywords'
+		'META Keywords' => '_keywords',
 	),
 	'Hybrid' => array(
 		'Custom Doctitle' => 'Title',
 		'META Description' => 'Description',
-		'META Keywords' => 'Keywords'
+		'META Keywords' => 'Keywords',
 	),
 	'Thesis 1.x' => array(
 		'Custom Doctitle' => 'thesis_title',
@@ -74,7 +74,7 @@ $_seodt_themes = array(
 	'WooFramework' => array(
 		'Custom Doctitle' => 'seo_title',
 		'META Description' => 'seo_description',
-		'META Keywords' => 'seo_keywords'
+		'META Keywords' => 'seo_keywords',
 	)
 );
 
@@ -101,7 +101,7 @@ $_seodt_plugins = array(
 		'Custom Doctitle' => '_headspace_page_title',
 		'META Description' => '_headspace_description',
 		'META Keywords' => '_headspace_keywords',
-		'Custom Scripts' => '_headspace_scripts'
+		'Custom Scripts' => '_headspace_scripts',
 	),
 	'Infinite SEO' => array(
 		'Custom Doctitle' => '_wds_title',
@@ -110,7 +110,7 @@ $_seodt_plugins = array(
 		'noindex' => '_wds_meta-robots-noindex',
 		'nofollow' => '_wds_meta-robots-nofollow',
 		'Canonical URI' => '_wds_canonical',
-		'Redirect URI' => '_wds_redirect'
+		'Redirect URI' => '_wds_redirect',
 	),
 	'Meta SEO Pack' => array(
 		'META Description' => '_msp_description',
@@ -121,12 +121,16 @@ $_seodt_plugins = array(
 		'META Description' => 'description',
 		'META Keywords' => 'keywords',
 	),
+	'SEO Title Tag' => array(
+		'Custom Doctitle' => 'title_tag',
+		'META Description' => 'meta_description',
+	),
 	'SEO Ultimate' => array(
 		'Custom Doctitle' => '_su_title',
 		'META Description' => '_su_description',
 		'META Keywords' => '_su_keywords',
 		'noindex' => '_su_meta_robots_noindex',
-		'nofollow' => '_su_meta_robots_nofollow'
+		'nofollow' => '_su_meta_robots_nofollow',
 	),
 	'WordPress SEO' => array(
 		'Custom Doctitle' => '_yoast_wpseo_title',
@@ -135,7 +139,7 @@ $_seodt_plugins = array(
 		'noindex' => '_yoast_wpseo_meta-robots-noindex',
 		'nofollow' => '_yoast_wpseo_meta-robots-nofollow',
 		'Canonical URI' => '_yoast_wpseo_canonical',
-		'Redirect URI' => '_yoast_wpseo_redirect'
+		'Redirect URI' => '_yoast_wpseo_redirect',
 	)
 );
 
@@ -159,8 +163,8 @@ function seodt_activation_hook() {
 /**
  * Include the other elements of the plugin.
  */
-require_once(SEODT_PLUGIN_DIR . '/admin.php');
-require_once(SEODT_PLUGIN_DIR . '/functions.php');
+require_once( SEODT_PLUGIN_DIR . '/admin.php' );
+require_once( SEODT_PLUGIN_DIR . '/functions.php' );
 
 /**
  * Manual conversion test

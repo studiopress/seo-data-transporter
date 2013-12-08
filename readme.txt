@@ -86,3 +86,6 @@ It's relatively stable. This plugin has been in the repository since August, 201
 
 = 0.9.8 =
 * Added support for Thesis 2.x
+
+= 0.9.9 =
+* Added support for SEO Title Tag

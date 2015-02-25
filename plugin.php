@@ -10,6 +10,8 @@ Author URI:		http://www.nathanrice.net/
 
 define('SEODT_PLUGIN_DIR', dirname(__FILE__));
 
+global $_seodt_themes, $_seodt_plugins, $_seodt_platforms;
+
 /**
  * The associative array of supported themes.
  */

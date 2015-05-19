@@ -25,12 +25,8 @@ function seodt_meta_key_convert( $old = '', $new = '', $delete_old = false ) {
 		return $output;
 	}
 
-	$include = $wpdb->get_col( $wpdb->prepare( "SELECT meta_id FROM $wpdb->postmeta WHERE meta_key = %s", $old ) );
-
 	// 	See which records we need to ignore, if any
 	$exclude = $wpdb->get_results( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = %s", $new ) );
-
-	//	If Thesis 2.x, flatten 
 
 	//	If no records to ignore, we'll do a basic UPDATE and DELETE
 	if ( !$exclude ) {

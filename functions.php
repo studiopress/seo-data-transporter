@@ -13,6 +13,8 @@
  * The function returns an object for error detection, and the number of affected rows.
  */
 function seodt_meta_key_convert( $old = '', $new = '', $delete_old = false ) {
+
+	do_action( 'pre_seodt_meta_key_convert_before', $old, $new, $delete_old );
 	
 	global $wpdb;
 	
@@ -23,8 +25,12 @@ function seodt_meta_key_convert( $old = '', $new = '', $delete_old = false ) {
 		return $output;
 	}
 
+	$include = $wpdb->get_col( $wpdb->prepare( "SELECT meta_id FROM $wpdb->postmeta WHERE meta_key = %s", $old ) );
+
 	// 	See which records we need to ignore, if any
 	$exclude = $wpdb->get_results( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = %s", $new ) );
+
+	//	If Thesis 2.x, flatten 
 
 	//	If no records to ignore, we'll do a basic UPDATE and DELETE
 	if ( !$exclude ) {
@@ -37,7 +43,7 @@ function seodt_meta_key_convert( $old = '', $new = '', $delete_old = false ) {
 	//	Else, do a more complex UPDATE and DELETE
 	else {
 		
-		foreach ( (array)$exclude as $key => $value ) { 
+		foreach ( (array)$exclude as $key => $value ) {
 			$not_in[] = $value->post_id;
 		}
 		$not_in = implode(', ', (array)$not_in );
@@ -47,7 +53,9 @@ function seodt_meta_key_convert( $old = '', $new = '', $delete_old = false ) {
 		$output->ignored = count( $exclude );
 		
 	}
-	
+
+	do_action( 'seodt_meta_key_convert', $output, $old, $new, $delete_old );
+
 	return $output;
 	
 }
@@ -62,6 +70,8 @@ function seodt_meta_key_convert( $old = '', $new = '', $delete_old = false ) {
  * on each entry.
  */
 function seodt_post_meta_convert( $old_platform = '', $new_platform = '', $delete_old = false ) {
+
+	do_action( 'pre_seodt_post_meta_convert', $old_platform, $new_platform, $delete_old );
 	
 	global $_seodt_platforms;
 	
@@ -98,7 +108,9 @@ function seodt_post_meta_convert( $old_platform = '', $new_platform = '', $delet
 		$output->ignored = $output->ignored + (int)$result->ignored;
 		
 	}
-	
+
+	do_action( 'seodt_post_meta_convert', $output, $old_platform, $new_platform, $delete_old );
+
 	return $output;
 		
 }
@@ -108,6 +120,8 @@ function seodt_post_meta_convert( $old_platform = '', $new_platform = '', $delet
  * what data can be converted from one to the other, and which elements to ignore (future).
  */
 function seodt_post_meta_analyze( $old_platform = '', $new_platform = '' ) {
+
+	do_action( 'pre_seodt_post_meta_analyze', $old_platform, $new_platform );
 	
 	global $wpdb, $_seodt_platforms;
 	
@@ -131,6 +145,7 @@ function seodt_post_meta_analyze( $old_platform = '', $new_platform = '' ) {
 		$elements[] = $label;
 		
 		// see which records to ignore, if any
+		$ignore = 0;
 //		$ignore = $wpdb->get_results( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = %s", $meta_key ) );
 		
 		// see which records to update, if any
@@ -150,7 +165,9 @@ function seodt_post_meta_analyze( $old_platform = '', $new_platform = '' ) {
 	} // endforeach
 	
 	$output->elements = $elements;
-	
+
+	do_action( 'seodt_post_meta_analyze', $output, $old_platform, $new_platform );
+
 	return $output;
 	
 }

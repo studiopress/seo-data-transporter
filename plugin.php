@@ -66,12 +66,12 @@ $_seodt_themes = array(
 		'Redirect URI' => 'thesis_redirect',
 	),
 	'Thesis 2.x' => array(
-		'Custom Doctitle' => 'thesis_title_tag',
-		'META Description' => 'thesis_meta_description',
-		'META Keywords' => 'thesis_meta_keywords',
-		'Custom Scripts' => 'thesis_javascript_scripts',
-		'Canonical URI' => 'thesis_canonical_link',
-		'Redirect URI' => 'thesis_redirect',
+		'Custom Doctitle' => '_thesis_title_tag',
+		'META Description' => '_thesis_meta_description',
+		'META Keywords' => '_thesis_meta_keywords',
+		'Custom Scripts' => '_thesis_javascript_scripts',
+		'Canonical URI' => '_thesis_canonical_link',
+		'Redirect URI' => '_thesis_redirect',
 	),
 	'WooFramework' => array(
 		'Custom Doctitle' => 'seo_title',

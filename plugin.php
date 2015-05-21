@@ -164,6 +164,14 @@ function seodt_init() {
 	require_once( SEODT_PLUGIN_DIR . '/admin.php' );
 	require_once( SEODT_PLUGIN_DIR . '/functions.php' );
 
+	/**
+	 * Init hook.
+	 *
+	 * Hook fires after plugin functions are loaded.
+	 *
+	 * @since 0.9.10
+	 *
+	 */
 	do_action( 'seodt_init' );
 
 }

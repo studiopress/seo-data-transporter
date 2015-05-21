@@ -22,7 +22,7 @@ Just choose what platform your moving away from, and what platform you want to m
 * Genesis
 * Headway
 * Hybrid
-* Thesis (1.x & 2.x)
+* Thesis 1.x
 * WooFramework
 
 **Supported Plugins**
@@ -89,3 +89,7 @@ It's relatively stable. This plugin has been in the repository since August, 201
 
 = 0.9.9 =
 * Added support for SEO Title Tag
+
+= 0.9.10 =
+* Remove support for Thesis 2.x
+* Add hooks

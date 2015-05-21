@@ -65,6 +65,7 @@ $_seodt_themes = array(
 		'Custom Scripts' => 'thesis_javascript_scripts',
 		'Redirect URI' => 'thesis_redirect',
 	),
+	/*
 	'Thesis 2.x' => array(
 		'Custom Doctitle' => '_thesis_title_tag',
 		'META Description' => '_thesis_meta_description',
@@ -73,6 +74,7 @@ $_seodt_themes = array(
 		'Canonical URI' => '_thesis_canonical_link',
 		'Redirect URI' => '_thesis_redirect',
 	),
+	*/
 	'WooFramework' => array(
 		'Custom Doctitle' => 'seo_title',
 		'META Description' => 'seo_description',

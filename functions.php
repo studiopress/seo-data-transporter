@@ -130,7 +130,7 @@ function seodt_post_meta_analyze( $old_platform = '', $new_platform = '' ) {
 	
 	$output->update = 0;
 	$output->ignore = 0;
-	$outout->elements = '';
+	$output->elements = '';
 	
 	foreach ( (array)$_seodt_platforms[$old_platform] as $label => $meta_key ) {
 		

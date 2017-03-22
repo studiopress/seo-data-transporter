@@ -142,7 +142,7 @@ function seodt_init() {
 			'noindex' => '_su_meta_robots_noindex',
 			'nofollow' => '_su_meta_robots_nofollow',
 		),
-		'WordPress SEO' => array(
+		'Yoast SEO for WordPress' => array(
 			'Custom Doctitle' => '_yoast_wpseo_title',
 			'META Description' => '_yoast_wpseo_metadesc',
 			'META Keywords' => '_yoast_wpseo_metakeywords',

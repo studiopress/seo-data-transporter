@@ -64,6 +64,9 @@ function seodt_init() {
 			'META Description' => 'Description',
 			'META Keywords' => 'Keywords',
 		),
+		'Jetpack Advanced SEO' => array(
+			'META Description' => 'advanced_seo_description',
+		),
 		'Thesis 1.x' => array(
 			'Custom Doctitle' => 'thesis_title',
 			'META Description' => 'thesis_description',

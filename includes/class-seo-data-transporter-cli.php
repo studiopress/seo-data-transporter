@@ -31,6 +31,7 @@ class SEO_Data_Transporter_CLI extends WP_CLI_Command {
 	 * * Greg's High Performance SEO
 	 * * Headspace2
 	 * * Infinite SEO
+	 * * Jetpack Advanced SEO
 	 * * Meta SEO Pack
 	 * * Platinum SEO
 	 * * SEO Title Tag

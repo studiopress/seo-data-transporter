@@ -34,7 +34,7 @@ Just choose what platform your moving away from, and what platform you want to m
 * Meta SEO Pack
 * Platinum SEO
 * SEO Ultimate
-* WordPress SEO
+* Yoast SEO for WordPress
 
 == Installation ==
 

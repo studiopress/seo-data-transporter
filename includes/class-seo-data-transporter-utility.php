@@ -126,7 +126,7 @@
 
 		}
 
-		do_action_( 'seodt_post_meta_convert', $output, $old_platform, $new_platform, $delete_old );
+		do_action( 'seodt_post_meta_convert', $output, $old_platform, $new_platform, $delete_old );
 
 		return $output;
 

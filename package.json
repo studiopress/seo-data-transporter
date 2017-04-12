@@ -1,0 +1,37 @@
+{
+  "name": "seo-data-transporter",
+  "description": "Development files for the SEO Data Transporter plugin.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/copyblogger/seo-data-transporter"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-autoprefixer": "*",
+    "grunt-checktextdomain": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-csscomb": "*",
+    "grunt-jsbeautifier": "*",
+    "grunt-jsvalidate": "*",
+    "grunt-phplint": "*",
+    "grunt-styledocco": "*",
+    "grunt-wp-i18n": "*",
+    "load-grunt-tasks": "*"
+  },
+  "plugin": {
+    "name": "SEO Data Transporter",
+    "uri": "https://github.com/copyblogger/seo-data-transporter",
+    "description": "SEO Data Transporter helps you transfer post/page specific SEO data, like custom doctitles, custom META descriptions and keywords, etc., from one platform (theme or plugin) to another.",
+    "author": "StudioPress",
+    "authoruri": "http://www.studiopress.com/",
+    "version": "1.0.0",
+    "license": "GPL-2.0+",
+    "licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
+    "textdomain": "seo-data-transporter"
+  }
+}

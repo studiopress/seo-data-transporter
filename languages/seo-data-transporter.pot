@@ -1,0 +1,132 @@
+# Copyright (C) 2017 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: StudioPress <translations@studiopress.com>\n"
+"POT-Creation-Date: 2017-04-12 14:37:54+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: StudioPress <translations@studiopress.com>\n"
+"Language-Team: English <translations@studiopress.com>\n"
+"X-Generator: grunt-wp-i18n 0.4.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes\n"
+
+#: includes/class-seo-data-transporter-admin.php:50
+msgid "SEO Data Transporter"
+msgstr ""
+
+#: includes/class-seo-data-transporter-admin.php:51
+msgid "Convert SEO Data"
+msgstr ""
+
+#: includes/class-seo-data-transporter-admin.php:104
+msgid "Choose platform:"
+msgstr ""
+
+#: includes/class-seo-data-transporter-admin.php:106
+#: includes/class-seo-data-transporter-admin.php:112
+msgid "Themes"
+msgstr ""
+
+#: includes/class-seo-data-transporter-admin.php:184
+msgid "Something went wrong. Please make your selection and try again."
+msgstr ""
+
+#: includes/class-seo-data-transporter-admin.php:196
+#: includes/class-seo-data-transporter-cli.php:59
+msgid "You must choose two different platforms before submitting."
+msgstr ""
+
+#: includes/class-seo-data-transporter-admin.php:210
+msgid "Compatible Elements:"
+msgstr ""
+
+#: includes/class-seo-data-transporter-admin.php:218
+msgid "The analysis found %d compatible database records to be converted."
+msgstr ""
+
+#: includes/class-seo-data-transporter-admin.php:233
+msgid "records were updated"
+msgstr ""
+
+#: includes/class-seo-data-transporter-admin.php:234
+msgid "records were ignored"
+msgstr ""
+
+#: includes/class-seo-data-transporter-cli.php:54
+msgid "This plugin does not support one or both of the platforms you chose."
+msgstr ""
+
+#: includes/class-seo-data-transporter-cli.php:69
+#: includes/class-seo-data-transporter-cli.php:83
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: includes/class-seo-data-transporter-cli.php:74
+msgid "No compatible records were identified."
+msgstr ""
+
+#: includes/class-seo-data-transporter-cli.php:78
+msgid "%d compatible records identified. Continue with conversion?"
+msgstr ""
+
+#: includes/class-seo-data-transporter-cli.php:88
+msgid "No records could be changed."
+msgstr ""
+
+#: includes/class-seo-data-transporter-cli.php:92
+msgid "%d records were successfully converted."
+msgstr ""
+
+#: includes/views/admin.php:5
+msgid ""
+"Use the form below to choose which platform you wish to convert FROM, and "
+"which platform you wish to convert TO."
+msgstr ""
+
+#: includes/views/admin.php:9
+msgid ""
+"Click \"Analyze\" for a list of elements you are able to convert, along "
+"with the number of records that will be converted. Some platforms do not "
+"share similar elements, or store data in a non-standard way. These records "
+"will remain unchanged. Any compatible elements will be displayed for your "
+"review. Also, some records will be ignored if the post/page in question "
+"already contains a record for that particular SEO element in the new "
+"platform."
+msgstr ""
+
+#: includes/views/admin.php:12
+msgid ""
+"Click \"Convert\" to perform the conversion. After the conversion is "
+"complete, you will be alerted to how many records were converted, and how "
+"many records had to be ignored, based on the criteria above."
+msgstr ""
+
+#: includes/views/admin.php:18
+msgid "Convert inpost SEO data from: "
+msgstr ""
+
+#: includes/views/admin.php:21
+msgid " to: "
+msgstr ""
+
+#: includes/views/admin.php:26
+msgid "Analyze"
+msgstr ""
+
+#: includes/views/admin.php:27
+msgid "Convert"
+msgstr ""

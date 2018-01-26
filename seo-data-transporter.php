@@ -161,7 +161,7 @@ final class SEO_Data_Transporter {
 			'Praison SEO' => array(
 				'Custom Doctitle'  => 'zeo_title',
 				'META Description' => 'zeo_description',
-				'META Keywords'    => 'zeo-keywords',
+				'META Keywords'    => 'zeo_keywords',
 			),
 			'SEO Title Tag' => array(
 				'Custom Doctitle'  => 'title_tag',

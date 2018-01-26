@@ -8,7 +8,7 @@ Description: SEO Data Transporter helps you transfer post/page specific SEO data
 Author: StudioPress
 Author URI: http://www.studiopress.com/
 
-Version: 1.0.0
+Version: 1.0.1
 
 Text Domain: seo-data-transporter
 Domain Path: /languages/

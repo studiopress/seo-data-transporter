@@ -9,7 +9,7 @@ final class SEO_Data_Transporter {
 	/**
 	 * Plugin version
 	 */
-	public $plugin_version = '1.0.0';
+	public $plugin_version = '1.0.1';
 
 	/**
 	 * The plugin textdomain, for translations.
@@ -157,6 +157,11 @@ final class SEO_Data_Transporter {
 				'Custom Doctitle'  => 'title',
 				'META Description' => 'description',
 				'META Keywords'    => 'keywords',
+			),
+			'Praison SEO' => array(
+				'Custom Doctitle'  => 'zeo_title',
+				'META Description' => 'zeo_description',
+				'META Keywords'    => 'zeo-keywords',
 			),
 			'SEO Title Tag' => array(
 				'Custom Doctitle'  => 'title_tag',

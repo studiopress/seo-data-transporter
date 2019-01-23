@@ -174,6 +174,15 @@ final class SEO_Data_Transporter {
 				'noindex'          => '_su_meta_robots_noindex',
 				'nofollow'         => '_su_meta_robots_nofollow',
 			),
+			'The SEO Framework' => array(
+				'Custom Doctitle'  => '_genesis_title',
+				'META Description' => '_genesis_description',
+				'noindex'          => '_genesis_noindex',
+				'nofollow'         => '_genesis_nofollow',
+				'noarchive'        => '_genesis_noarchive',
+				'Canonical URI'    => '_genesis_canonical_uri',
+				'Redirect URI'     => 'redirect',
+			),
 			'Yoast SEO' => array(
 				'Custom Doctitle'  => '_yoast_wpseo_title',
 				'META Description' => '_yoast_wpseo_metadesc',

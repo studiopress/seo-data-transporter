@@ -109,7 +109,7 @@ class SEO_Data_Transporter_Admin {
 		}
 		echo '</optgroup>';
 
-		printf( '<optgroup label="%s">', __('Themes', 'seo-data-transporter') );
+		printf( '<optgroup label="%s">', __('Plugins', 'seo-data-transporter') );
 		foreach ( $plugins as $platform => $data ) {
 			printf( '<option value="%s">%s</option>', esc_attr( $platform ), esc_html( $platform ) );
 		}

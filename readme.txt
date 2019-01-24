@@ -1,10 +1,10 @@
 === Plugin Name ===
-Contributors: nathanrice, studiopress
+Contributors: nathanrice, studiopress, mazedulislamkhan, joostdevalk
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5553118
 Tags: seo, genesis, genesiswp, thesis, thesiswp, headway, headwaywp, builder, frugal, hybrid, woothemes, all in one seo, headspace, platinum seo
 Requires at least: 4.7.3
-Tested up to: 4.7.3
-Stable tag: 1.0.1
+Tested up to: 5.0.3
+Stable tag: 1.1.0
 
 This plugin allows you to transfer your inputs SEO data from one theme/plugin to another.
 
@@ -36,6 +36,7 @@ Just choose what platform your moving away from, and what platform you want to m
 * Praison SEO
 * SEO Title Tag
 * SEO Ultimate
+* The SEO Framework
 * Yoast SEO
 
 == Installation ==
@@ -60,8 +61,10 @@ It's relatively stable. This plugin has been in the repository since August, 201
 
 == Changelog ==
 
-= 1.0.1 =
+= 1.1.0 =
 * Add support for Praison SEO
+* Add support for The SEO Framework
+* Fix typo on dropdown label
 
 = 1.0.0 =
 * Rewrite plugin based on new boilerplate

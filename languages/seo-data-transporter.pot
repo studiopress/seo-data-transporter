@@ -1,14 +1,14 @@
-# Copyright (C) 2017 
-# This file is distributed under the same license as the  package.
+# Copyright (C) 2019 StudioPress
+# This file is distributed under the GNU General Public License v2.0 (or later).
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: SEO Data Transporter 1.1.0\n"
 "Report-Msgid-Bugs-To: StudioPress <translations@studiopress.com>\n"
-"POT-Creation-Date: 2017-04-12 14:37:54+00:00\n"
+"POT-Creation-Date: 2019-02-01 15:20:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
 "Last-Translator: StudioPress <translations@studiopress.com>\n"
 "Language-Team: English <translations@studiopress.com>\n"
 "X-Generator: grunt-wp-i18n 0.4.4\n"
@@ -24,7 +24,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes\n"
 
-#: includes/class-seo-data-transporter-admin.php:50
+#. Plugin Name of the plugin/theme
 msgid "SEO Data Transporter"
 msgstr ""
 
@@ -37,8 +37,11 @@ msgid "Choose platform:"
 msgstr ""
 
 #: includes/class-seo-data-transporter-admin.php:106
-#: includes/class-seo-data-transporter-admin.php:112
 msgid "Themes"
+msgstr ""
+
+#: includes/class-seo-data-transporter-admin.php:112
+msgid "Plugins"
 msgstr ""
 
 #: includes/class-seo-data-transporter-admin.php:184
@@ -129,4 +132,23 @@ msgstr ""
 
 #: includes/views/admin.php:27
 msgid "Convert"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/seo-data-transporter/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"SEO Data Transporter helps you transfer post/page specific SEO data, like "
+"custom doctitles, custom META descriptions and keywords, etc., from one "
+"platform (theme or plugin) to another."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "StudioPress"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.studiopress.com/"
 msgstr ""

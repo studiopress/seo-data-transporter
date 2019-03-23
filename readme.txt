@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: seo, genesis, genesiswp, thesis, thesiswp, headway, headwaywp, builder, frugal, hybrid, woothemes, all in one seo, headspace, platinum seo
 Requires at least: 4.7.3
 Tested up to: 5.0.3
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 
 This plugin allows you to transfer your inputs SEO data from one theme/plugin to another.
 
@@ -60,6 +60,10 @@ It's relatively stable. This plugin has been in the repository since August, 201
 1. The SEO Data Transporter UI, including the dropdown with all the supported platforms
 
 == Changelog ==
+
+= 1.1.1 =
+* Fix Greg's High Performance SEO selection
+* Fix PHP notices when an unknown plugin or theme is selected
 
 = 1.1.0 =
 * Add support for Praison SEO

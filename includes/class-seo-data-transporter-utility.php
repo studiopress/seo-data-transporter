@@ -4,7 +4,7 @@
  *
  * @since 1.0.0
  */
- class SEO_Data_Transporter_Utility {
+class SEO_Data_Transporter_Utility {
 
 	/**
 	 * Supported platforms.
@@ -35,15 +35,15 @@
 
 		$output = new stdClass;
 
+		$output->update   = 0;
+		$output->ignore   = 0;
+		$output->elements = array();
+
 		// Neither platform should be empty.
 		if ( empty( $this->platforms[ $old_platform ] ) || empty( $this->platforms[ $new_platform ] ) ) {
 			$output->WP_Error = 1;
 			return $output;
 		}
-
-		$output->update   = 0;
-		$output->ignore   = 0;
-		$output->elements = array();
 
 		foreach ( (array) $this->platforms[ $old_platform ] as $label => $meta_key ) {
 
@@ -92,14 +92,14 @@
 
 		$output = new stdClass;
 
+		$output->updated = 0;
+		$output->deleted = 0;
+		$output->ignored = 0;
+
 		if ( empty( $this->platforms[ $old_platform ] ) || empty( $this->platforms[ $new_platform ] ) ) {
 			$output->WP_Error = 1;
 			return $output;
 		}
-
-		$output->updated = 0;
-		$output->deleted = 0;
-		$output->ignored = 0;
 
 		foreach ( (array) $this->platforms[ $old_platform ] as $label => $meta_key ) {
 
@@ -146,10 +146,8 @@
 		$output = new stdClass;
 
 		if ( ! $old_key || ! $new_key ) {
-
 			$output->WP_Error = 1;
 			return $output;
-
 		}
 
 		// 	See which records we need to ignore, if any
@@ -185,4 +183,4 @@
 
 	}
 
- }
+}

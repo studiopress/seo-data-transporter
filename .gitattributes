@@ -12,3 +12,12 @@
 *.jpg binary
 *.gif binary
 *.ico binary
+
+# Export ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+.svnignore export-ignore
+Gruntfile.js export-ignore
+package.json export-ignore
+README.md export-ignore
+screenshot-* export-ignore

@@ -122,6 +122,7 @@ class SEO_Data_Transporter_Admin {
 	 * Process the form.
 	 *
 	 * @since 1.0.0
+	 * @since 1.1.1 Now unslashes the request arguments.
 	 */
 	public function process_form() {
 
@@ -142,6 +143,8 @@ class SEO_Data_Transporter_Admin {
 			add_action( 'admin_notices', array( $this, 'notice_error_select' ) );
 			return false;
 		}
+
+		$args = wp_unslash( $args );
 
 		// Utility object
 		require_once( SEO_Data_Transporter()->plugin_dir_path . 'includes/class-seo-data-transporter-utility.php' );

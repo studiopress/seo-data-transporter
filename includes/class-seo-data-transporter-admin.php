@@ -1,6 +1,6 @@
 <?php
 /**
- * Data Transporter Class
+ * Data Transporter Admin Class
  *
  * @package seo-data-transporter
  */
@@ -118,15 +118,15 @@ class SEO_Data_Transporter_Admin {
 	public function generate_select( $name, $themes, $plugins ) {
 
 		printf( '<select name="%s">', esc_attr( $name ) );
-		printf( '<option value="">%s</option>', __( 'Choose platform:', 'seo-data-transporter' ) );
+		printf( '<option value="">%s</option>', esc_attr( __( 'Choose platform:', 'seo-data-transporter' ) ) );
 
-		printf( '<optgroup label="%s">', __( 'Themes', 'seo-data-transporter' ) );
+		printf( '<optgroup label="%s">', esc_attr( __( 'Themes', 'seo-data-transporter' ) ) );
 		foreach ( $themes as $platform => $data ) {
 			printf( '<option value="%s">%s</option>', esc_attr( $platform ), esc_html( $platform ) );
 		}
 		echo '</optgroup>';
 
-		printf( '<optgroup label="%s">', __( 'Plugins', 'seo-data-transporter' ) );
+		printf( '<optgroup label="%s">', esc_attr( __( 'Plugins', 'seo-data-transporter' ) ) );
 		foreach ( $plugins as $platform => $data ) {
 			printf( '<option value="%s">%s</option>', esc_attr( $platform ), esc_html( $platform ) );
 		}
@@ -202,7 +202,7 @@ class SEO_Data_Transporter_Admin {
 	public function notice_error_unspecified() {
 
 		$message = __( 'Something went wrong. Please make your selection and try again.', 'seo-data-transporter' );
-		printf( '<div class="notice notice-error"><p>%s</p></div>', $message );
+		printf( '<div class="notice notice-error"><p>%s</p></div>', esc_html( $message ) );
 
 	}
 
@@ -214,7 +214,7 @@ class SEO_Data_Transporter_Admin {
 	public function notice_error_select() {
 
 		$message = __( 'You must choose two different platforms before submitting.', 'seo-data-transporter' );
-		printf( '<div class="notice notice-error"><p>%s</p></div>', $message );
+		printf( '<div class="notice notice-error"><p>%s</p></div>', esc_html( $message ) );
 
 	}
 
@@ -227,14 +227,15 @@ class SEO_Data_Transporter_Admin {
 
 		echo '<div class="notice">';
 
-			printf( '<p><b>%s</b></p>', __( 'Compatible Elements:', 'seo-data-transporter' ) );
+			printf( '<p><b>%s</b></p>', esc_html( __( 'Compatible Elements:', 'seo-data-transporter' ) ) );
 			echo '<ol>';
 		foreach ( (array) $this->analysis_result->elements as $element ) {
-			printf( '<li>%s</li>', $element );
+			printf( '<li>%s</li>', esc_html( $element ) );
 		}
 			echo '</ol>';
 
 			echo '<p>';
+			// Translators: The number is the number of database records to be converted.
 			printf( __( 'The analysis found %d compatible database records to be converted.', 'seo-data-transporter' ), $this->analysis_result->update );
 			echo '</p>';
 
@@ -250,8 +251,8 @@ class SEO_Data_Transporter_Admin {
 	public function notice_success_convert() {
 
 		echo '<div class="notice notice-success">';
-			printf( '<p><b>%d</b> %s</p>', isset( $this->conversion_result->updated ) ? $this->conversion_result->updated : 0, __( 'records were updated', 'seo-data-transporter' ) );
-			printf( '<p><b>%d</b> %s</p>', isset( $this->conversion_result->ignored ) ? $this->conversion_result->ignored : 0, __( 'records were ignored', 'seo-data-transporter' ) );
+			printf( '<p><b>%d</b> %s</p>', esc_html( isset( $this->conversion_result->updated ) ? $this->conversion_result->updated : 0, __( 'records were updated', 'seo-data-transporter' ) ) );
+			printf( '<p><b>%d</b> %s</p>', esc_html( isset( $this->conversion_result->ignored ) ? $this->conversion_result->ignored : 0, __( 'records were ignored', 'seo-data-transporter' ) ) );
 		echo '</div>';
 
 	}

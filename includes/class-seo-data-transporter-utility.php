@@ -50,6 +50,7 @@ class SEO_Data_Transporter_Utility {
 
 		// Neither platform should be empty.
 		if ( empty( $this->platforms[ $old_platform ] ) || empty( $this->platforms[ $new_platform ] ) ) {
+			// phpcs:ignore
 			$output->WP_Error = 1;
 			return $output;
 		}
@@ -60,7 +61,7 @@ class SEO_Data_Transporter_Utility {
 
 		foreach ( (array) $this->platforms[ $old_platform ] as $label => $meta_key ) {
 
-			// skip iterations where no $new analog exists
+			// Skip iterations where no $new analog exists.
 			if ( empty( $this->platforms[ $new_platform ][ $label ] ) ) {
 				continue;
 			}
@@ -107,6 +108,7 @@ class SEO_Data_Transporter_Utility {
 		$output = new stdClass();
 
 		if ( empty( $this->platforms[ $old_platform ] ) || empty( $this->platforms[ $new_platform ] ) ) {
+			// phpcs:ignore
 			$output->WP_Error = 1;
 			return $output;
 		}
@@ -164,7 +166,7 @@ class SEO_Data_Transporter_Utility {
 		$output = new stdClass();
 
 		if ( ! $old_key || ! $new_key ) {
-
+			// phpcs:ignore
 			$output->WP_Error = 1;
 			return $output;
 

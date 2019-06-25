@@ -1,5 +1,11 @@
 <?php
 /**
+ * Main Data Transporter Class
+ *
+ * @package seo-data-transporter
+ */
+
+/**
  * The SEO Data Transporter main class.
  *
  * @since 1.0.0
@@ -8,41 +14,57 @@ final class SEO_Data_Transporter {
 
 	/**
 	 * Plugin version
+	 *
+	 * @var $plugin_version Plugin Version
 	 */
 	public $plugin_version = '1.1.0';
 
 	/**
 	 * The plugin textdomain, for translations.
+	 *
+	 * @var $plugin_textdomain Plugin Text Domain
 	 */
 	public $plugin_textdomain = 'seo-data-transporter';
 
 	/**
 	 * The url to the plugin directory.
+	 *
+	 * @var $plugin_version Plugin Version
 	 */
 	public $plugin_dir_url;
 
 	/**
 	 * The path to the plugin directory.
+	 *
+	 * @var $plugin_dir_path Plugin Dir Path
 	 */
 	public $plugin_dir_path;
 
 	/**
 	 * Supported themes.
+	 *
+	 * @var $themes Themes
 	 */
 	public $themes;
 
 	/**
 	 * Supported plugins.
+	 *
+	 * @var $plugins Plugins
 	 */
 	public $plugins;
 
 	/**
 	 * Admin object.
+	 *
+	 * @var $admin Admin
 	 */
 	public $admin;
 
 	/**
 	 * Utility object
+	 *
+	 * @var $utility Utility
 	 */
 	public $utility;
 
@@ -56,7 +78,7 @@ final class SEO_Data_Transporter {
 		$this->plugin_dir_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_dir_path = plugin_dir_path( __FILE__ );
 
-		// For backward compatibility
+		// For backward compatibility.
 		define( 'SEODT_PLUGIN_DIR', $this->plugin_dir_path );
 
 		$this->themes = array(
@@ -301,7 +323,7 @@ function SEO_Data_Transporter() {
 
 	static $object;
 
-	if ( null == $object ) {
+	if ( null === $object ) {
 		$object = new SEO_Data_Transporter();
 	}
 

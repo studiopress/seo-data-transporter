@@ -1,3 +1,12 @@
+<?php
+/**
+ * Admin php
+ *
+ * @package seo-data-transporter
+ */
+
+?>
+
 <div class="wrap genesis-form">
 <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 

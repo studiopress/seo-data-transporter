@@ -1,5 +1,13 @@
 <?php
+/**
+ * Data Transporter Class
+ *
+ * @package seo-data-transporter
+ */
 
+/**
+ * Data Transporter CLI
+ */
 class SEO_Data_Transporter_CLI extends WP_CLI_Command {
 
 	/**
@@ -43,6 +51,9 @@ class SEO_Data_Transporter_CLI extends WP_CLI_Command {
 	 *     # Convert compatible records from Hybrid to All in One SEO Pack
 	 *     $ wp seodt convert "Hybrid" "All in One SEO Pack"
 	 *     Success: X Records were successfully converted.
+	 *
+	 * @param Array $args args.
+	 * @param Array $assoc_args associated args.
 	 */
 	public function convert( $args, $assoc_args ) {
 
@@ -55,12 +66,12 @@ class SEO_Data_Transporter_CLI extends WP_CLI_Command {
 			return false;
 		}
 
-		if ( $old_platform == $new_platform ) {
+		if ( $old_platform === $new_platform ) {
 			WP_CLI::error( __( 'You must choose two different platforms before submitting.', 'seo-data-transporter' ) );
 			return false;
 		}
 
-		require_once( SEO_Data_Transporter()->plugin_dir_path . 'includes/class-seo-data-transporter-utility.php' );
+		require_once SEO_Data_Transporter()->plugin_dir_path . 'includes/class-seo-data-transporter-utility.php';
 		$utility = new SEO_Data_Transporter_Utility( $platforms );
 
 		$analysis = $utility->analyze( $old_platform, $new_platform );
@@ -70,11 +81,11 @@ class SEO_Data_Transporter_CLI extends WP_CLI_Command {
 			return false;
 		}
 
-		if ( 0 == $analysis->update ) {
+		if ( 0 === $analysis->update ) {
 			WP_CLI::line( __( 'No compatible records were identified.', 'seo-data-transporter' ) );
 			return false;
 		}
-
+		// Translators: Number is the number of convertable records.
 		WP_CLI::confirm( sprintf( __( '%d compatible records identified. Continue with conversion?', 'seo-data-transporter' ), $analysis->update ) );
 
 		$result = $utility->convert( $old_platform, $new_platform );
@@ -84,11 +95,12 @@ class SEO_Data_Transporter_CLI extends WP_CLI_Command {
 			return false;
 		}
 
-		if ( 0 == $result->updated ) {
+		if ( 0 === $result->updated ) {
 			WP_CLI::line( __( 'No records could be changed.', 'seo-data-transporter' ) );
 			return false;
 		}
 
+		// Translators: Number is the number of records converted.
 		WP_CLI::success( sprintf( __( '%d records were successfully converted.', 'seo-data-transporter' ), $result->updated ) );
 
 	}

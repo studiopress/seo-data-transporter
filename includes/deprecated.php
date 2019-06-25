@@ -3,6 +3,8 @@
  * Deprecated functions.
  *
  * @since 1.0.0
+ *
+ * @package seo-data-transporter
  */
 
 /**
@@ -31,6 +33,10 @@ function seodt_activation_hook() {
  * Deprecated. This function converts $old meta_key entries in the postmeta table into $new entries.
  *
  * @deprecated 1.0.0
+ *
+ * @param Array $old_key Old Key.
+ * @param Array $new_key New Key.
+ * @param Array $delete_old Delete Old.
  */
 function seodt_meta_key_convert( $old_key, $new_key, $delete_old ) {
 
@@ -46,6 +52,10 @@ function seodt_meta_key_convert( $old_key, $new_key, $delete_old ) {
  * Deprecated.
  *
  * @deprecated 1.0.0
+ *
+ * @param Array $old_platform Old Platform.
+ * @param Array $new_platform New Platform.
+ * @param Array $delete_old Delete Old.
  */
 function seodt_post_meta_convert( $old_platform, $new_platform, $delete_old ) {
 
@@ -61,6 +71,9 @@ function seodt_post_meta_convert( $old_platform, $new_platform, $delete_old ) {
  * Deprecated.
  *
  * @deprecated 1.0.0
+ *
+ * @param Array $old_platform Old Platform.
+ * @param Array $new_platform New Platform.
  */
 function seodt_post_meta_analyze( $old_platform, $new_platform ) {
 

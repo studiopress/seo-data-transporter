@@ -60,12 +60,12 @@ final class SEO_Data_Transporter {
 		define( 'SEODT_PLUGIN_DIR', $this->plugin_dir_path );
 
 		$this->themes = array(
-			'Builder' => array(
+			'Builder'      => array(
 				'Custom Doctitle'  => '_builder_seo_title',
 				'META Description' => '_builder_seo_description',
 				'META Keywords'    => '_builder_seo_keywords',
 			),
-			'Catalyst' => array(
+			'Catalyst'     => array(
 				'Custom Doctitle'  => '_catalyst_title',
 				'META Description' => '_catalyst_description',
 				'META Keywords'    => '_catalyst_keywords',
@@ -73,14 +73,14 @@ final class SEO_Data_Transporter {
 				'nofollow'         => '_catalyst_nofollow',
 				'noarchive'        => '_catalyst_noarchive',
 			),
-			'Frugal' => array(
+			'Frugal'       => array(
 				'Custom Doctitle'  => '_title',
 				'META Description' => '_description',
 				'META Keywords'    => '_keywords',
 				'noindex'          => '_noindex',
 				'nofollow'         => '_nofollow',
 			),
-			'Genesis' => array(
+			'Genesis'      => array(
 				'Custom Doctitle'  => '_genesis_title',
 				'META Description' => '_genesis_description',
 				'META Keywords'    => '_genesis_keywords',
@@ -91,17 +91,17 @@ final class SEO_Data_Transporter {
 				'Custom Scripts'   => '_genesis_scripts',
 				'Redirect URI'     => 'redirect',
 			),
-			'Headway' => array(
+			'Headway'      => array(
 				'Custom Doctitle'  => '_title',
 				'META Description' => '_description',
 				'META Keywords'    => '_keywords',
 			),
-			'Hybrid' => array(
+			'Hybrid'       => array(
 				'Custom Doctitle'  => 'Title',
 				'META Description' => 'Description',
 				'META Keywords'    => 'Keywords',
 			),
-			'Thesis 1.x' => array(
+			'Thesis 1.x'   => array(
 				'Custom Doctitle'  => 'thesis_title',
 				'META Description' => 'thesis_description',
 				'META Keywords'    => 'thesis_keywords',
@@ -116,12 +116,12 @@ final class SEO_Data_Transporter {
 		);
 
 		$this->plugins = array(
-			'Add Meta Tags' => array(
+			'Add Meta Tags'                => array(
 				'Custom Doctitle'  => '_amt_title',
 				'META Description' => '_amt_description',
 				'META Keywords'    => '_amt_keywords',
 			),
-			'All in One SEO Pack' => array(
+			'All in One SEO Pack'          => array(
 				'Custom Doctitle'  => '_aioseop_title',
 				'META Description' => '_aioseop_description',
 				'META Keywords'    => '_aioseop_keywords',
@@ -131,13 +131,13 @@ final class SEO_Data_Transporter {
 				'META Description' => '_ghpseo_alternative_description',
 				'META Keywords'    => '_ghpseo_keywords',
 			),
-			'Headspace2' => array(
+			'Headspace2'                   => array(
 				'Custom Doctitle'  => '_headspace_page_title',
 				'META Description' => '_headspace_description',
 				'META Keywords'    => '_headspace_keywords',
 				'Custom Scripts'   => '_headspace_scripts',
 			),
-			'Infinite SEO' => array(
+			'Infinite SEO'                 => array(
 				'Custom Doctitle'  => '_wds_title',
 				'META Description' => '_wds_metadesc',
 				'META Keywords'    => '_wds_keywords',
@@ -146,35 +146,35 @@ final class SEO_Data_Transporter {
 				'Canonical URI'    => '_wds_canonical',
 				'Redirect URI'     => '_wds_redirect',
 			),
-			'Jetpack Advanced SEO' => array(
+			'Jetpack Advanced SEO'         => array(
 				'META Description' => 'advanced_seo_description',
 			),
-			'Meta SEO Pack' => array(
+			'Meta SEO Pack'                => array(
 				'META Description' => '_msp_description',
 				'META Keywords'    => '_msp_keywords',
 			),
-			'Platinum SEO' => array(
+			'Platinum SEO'                 => array(
 				'Custom Doctitle'  => 'title',
 				'META Description' => 'description',
 				'META Keywords'    => 'keywords',
 			),
-			'Praison SEO' => array(
+			'Praison SEO'                  => array(
 				'Custom Doctitle'  => 'zeo_title',
 				'META Description' => 'zeo_description',
 				'META Keywords'    => 'zeo_keywords',
 			),
-			'SEO Title Tag' => array(
+			'SEO Title Tag'                => array(
 				'Custom Doctitle'  => 'title_tag',
 				'META Description' => 'meta_description',
 			),
-			'SEO Ultimate' => array(
+			'SEO Ultimate'                 => array(
 				'Custom Doctitle'  => '_su_title',
 				'META Description' => '_su_description',
 				'META Keywords'    => '_su_keywords',
 				'noindex'          => '_su_meta_robots_noindex',
 				'nofollow'         => '_su_meta_robots_nofollow',
 			),
-			'The SEO Framework' => array(
+			'The SEO Framework'            => array(
 				'Custom Doctitle'  => '_genesis_title',
 				'META Description' => '_genesis_description',
 				'noindex'          => '_genesis_noindex',
@@ -183,7 +183,7 @@ final class SEO_Data_Transporter {
 				'Canonical URI'    => '_genesis_canonical_uri',
 				'Redirect URI'     => 'redirect',
 			),
-			'Yoast SEO' => array(
+			'Yoast SEO'                    => array(
 				'Custom Doctitle'  => '_yoast_wpseo_title',
 				'META Description' => '_yoast_wpseo_metadesc',
 				'META Keywords'    => '_yoast_wpseo_metakeywords',
@@ -235,7 +235,7 @@ final class SEO_Data_Transporter {
 	 */
 	public function includes() {
 
-		require_once( $this->plugin_dir_path . 'includes/deprecated.php' );
+		require_once $this->plugin_dir_path . 'includes/deprecated.php';
 
 	}
 
@@ -249,7 +249,7 @@ final class SEO_Data_Transporter {
 		/**
 		 * The admin page.
 		 */
-		require_once( $this->plugin_dir_path . 'includes/class-seo-data-transporter-admin.php' );
+		require_once $this->plugin_dir_path . 'includes/class-seo-data-transporter-admin.php';
 		$this->admin = new SEO_Data_Transporter_Admin( $this->themes, $this->plugins );
 		$this->admin->init();
 
@@ -257,7 +257,7 @@ final class SEO_Data_Transporter {
 		 * The CLI commands.
 		 */
 		if ( defined( 'WP_CLI' ) && WP_CLI ) {
-			require_once( $this->plugin_dir_path . 'includes/class-seo-data-transporter-cli.php' );
+			require_once $this->plugin_dir_path . 'includes/class-seo-data-transporter-cli.php';
 			WP_CLI::add_command( 'seodt', 'SEO_Data_Transporter_CLI' );
 		}
 
@@ -302,7 +302,7 @@ function SEO_Data_Transporter() {
 	static $object;
 
 	if ( null == $object ) {
-		$object = new SEO_Data_Transporter;
+		$object = new SEO_Data_Transporter();
 	}
 
 	return $object;
@@ -310,6 +310,6 @@ function SEO_Data_Transporter() {
 }
 
 /**
- * Initialize the object on	`plugins_loaded`.
+ * Initialize the object on `plugins_loaded`.
  */
 add_action( 'plugins_loaded', array( SEO_Data_Transporter(), 'init' ) );

@@ -257,7 +257,7 @@ final class SEO_Data_Transporter {
 	 */
 	public function includes() {
 
-		require_once $this->plugin_dir_path . 'includes/deprecated.php';
+		require_once $this->plugin_dir_path . 'deprecated.php';
 
 	}
 
@@ -271,7 +271,7 @@ final class SEO_Data_Transporter {
 		/**
 		 * The admin page.
 		 */
-		require_once $this->plugin_dir_path . 'includes/class-seo-data-transporter-admin.php';
+		require_once $this->plugin_dir_path . 'class-seo-data-transporter-admin.php';
 		$this->admin = new SEO_Data_Transporter_Admin( $this->themes, $this->plugins );
 		$this->admin->init();
 
@@ -279,7 +279,7 @@ final class SEO_Data_Transporter {
 		 * The CLI commands.
 		 */
 		if ( defined( 'WP_CLI' ) && WP_CLI ) {
-			require_once $this->plugin_dir_path . 'includes/class-seo-data-transporter-cli.php';
+			require_once $this->plugin_dir_path . 'class-seo-data-transporter-cli.php';
 			WP_CLI::add_command( 'seodt', 'SEO_Data_Transporter_CLI' );
 		}
 

@@ -102,7 +102,7 @@ class SEO_Data_Transporter_Admin {
 	 */
 	public function admin() {
 
-		require_once SEO_Data_Transporter()->plugin_dir_path . 'includes/views/admin.php';
+		require_once SEO_Data_Transporter()->plugin_dir_path . 'views/admin.php';
 
 	}
 
@@ -118,7 +118,7 @@ class SEO_Data_Transporter_Admin {
 	public function generate_select( $name, $themes, $plugins ) {
 
 		printf( '<select name="%s">', esc_attr( $name ) );
-		printf( '<option value="">%s</option>', esc_attr( __( 'Choose platform:', 'seo-data-transporter' ) ) );
+		printf( '<option value="">%s</option>', esc_html( __( 'Choose platform:', 'seo-data-transporter' ) ) );
 
 		printf( '<optgroup label="%s">', esc_attr( __( 'Themes', 'seo-data-transporter' ) ) );
 		foreach ( $themes as $platform => $data ) {
@@ -164,7 +164,7 @@ class SEO_Data_Transporter_Admin {
 		}
 
 		// Utility object.
-		require_once SEO_Data_Transporter()->plugin_dir_path . 'includes/class-seo-data-transporter-utility.php';
+		require_once SEO_Data_Transporter()->plugin_dir_path . 'class-seo-data-transporter-utility.php';
 		$utility = new SEO_Data_Transporter_Utility( array_merge( $this->themes, $this->plugins ) );
 
 		if ( $args['analyze'] ) {
@@ -236,7 +236,7 @@ class SEO_Data_Transporter_Admin {
 
 			echo '<p>';
 			// Translators: The number is the number of database records to be converted.
-			printf( esc_html( __( 'The analysis found %d compatible database records to be converted.', 'seo-data-transporter' ), $this->analysis_result->update ) );
+			printf( esc_html( __( 'The analysis found %d compatible database records to be converted.', 'seo-data-transporter' ) ), esc_html( $this->analysis_result->update ) );
 			echo '</p>';
 
 		echo '</div>';
@@ -251,8 +251,8 @@ class SEO_Data_Transporter_Admin {
 	public function notice_success_convert() {
 
 		echo '<div class="notice notice-success">';
-			printf( '<p><b>%d</b> %s</p>', esc_html( isset( $this->conversion_result->updated ) ? $this->conversion_result->updated : 0, __( 'records were updated', 'seo-data-transporter' ) ) );
-			printf( '<p><b>%d</b> %s</p>', esc_html( isset( $this->conversion_result->ignored ) ? $this->conversion_result->ignored : 0, __( 'records were ignored', 'seo-data-transporter' ) ) );
+			printf( '<p><b>%d</b> %s</p>', isset( $this->conversion_result->updated ) ? esc_attr( $this->conversion_result->updated ) : 0, esc_html( __( 'records were updated', 'seo-data-transporter' ) ) );
+			printf( '<p><b>%d</b> %s</p>', isset( $this->conversion_result->ignored ) ? esc_attr( $this->conversion_result->ignored ) : 0, esc_html( __( 'records were ignored', 'seo-data-transporter' ) ) );
 		echo '</div>';
 
 	}

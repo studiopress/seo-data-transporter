@@ -71,7 +71,7 @@ class SEO_Data_Transporter_CLI extends WP_CLI_Command {
 			return false;
 		}
 
-		require_once SEO_Data_Transporter()->plugin_dir_path . 'includes/class-seo-data-transporter-utility.php';
+		require_once SEO_Data_Transporter()->plugin_dir_path . 'class-seo-data-transporter-utility.php';
 		$utility = new SEO_Data_Transporter_Utility( $platforms );
 
 		$analysis = $utility->analyze( $old_platform, $new_platform );

@@ -70,7 +70,6 @@ class SEO_Data_Transporter_Utility {
 
 			// See which records to ignore, if any.
 			$ignore = 0;
-			// $ignore = $wpdb->get_results( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = %s", $meta_key ) );
 			// See which records to update, if any.
 			// phpcs:ignore
 			$update = $wpdb->get_results( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = %s", $meta_key ) );
@@ -79,7 +78,6 @@ class SEO_Data_Transporter_Utility {
 			$update = count( (array) $update );
 
 			// calculate update/ignore by comparison
-			// $update = ( (int)$update > (int)$ignore ) ? ( (int)$update - (int)$ignore ) : 0;
 			// Update output numbers.
 			$output->update = $output->update + (int) $update;
 			$output->ignore = $output->ignore + (int) $ignore;

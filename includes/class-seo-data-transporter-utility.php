@@ -50,7 +50,7 @@ class SEO_Data_Transporter_Utility {
 
 		// Neither platform should be empty.
 		if ( empty( $this->platforms[ $old_platform ] ) || empty( $this->platforms[ $new_platform ] ) ) {
-			// phpcs:ignore
+			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 			$output->WP_Error = 1;
 			return $output;
 		}
@@ -72,6 +72,7 @@ class SEO_Data_Transporter_Utility {
 			$ignore = 0;
 			// $ignore = $wpdb->get_results( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = %s", $meta_key ) );
 			// See which records to update, if any.
+			// phpcs:ignore
 			$update = $wpdb->get_results( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = %s", $meta_key ) );
 
 			// Count items in returned arrays.
@@ -108,7 +109,7 @@ class SEO_Data_Transporter_Utility {
 		$output = new stdClass();
 
 		if ( empty( $this->platforms[ $old_platform ] ) || empty( $this->platforms[ $new_platform ] ) ) {
-			// phpcs:ignore
+			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 			$output->WP_Error = 1;
 			return $output;
 		}
@@ -166,20 +167,21 @@ class SEO_Data_Transporter_Utility {
 		$output = new stdClass();
 
 		if ( ! $old_key || ! $new_key ) {
-			// phpcs:ignore
+			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 			$output->WP_Error = 1;
 			return $output;
 
 		}
 
 		// See which records we need to ignore, if any.
+		// phpcs:ignore
 		$exclude = $wpdb->get_results( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = %s", $new_key ) );
 
 		// If no records to ignore, we'll do a basic UPDATE and DELETE.
 		if ( ! $exclude ) {
 
+			// phpcs:ignore
 			$output->updated = $wpdb->update( $wpdb->postmeta, array( 'meta_key' => $new_key ), array( 'meta_key' => $old_key ) );
-			// $output->deleted = $delete_old ? $wpdb->query( $wpdb->prepare( "DELETE FROM $wpdb->postmeta WHERE meta_key = %s", $old_key ) ) : 0;
 			$output->deleted = 0;
 			$output->ignored = 0;
 		} else {
@@ -189,8 +191,8 @@ class SEO_Data_Transporter_Utility {
 			}
 			$not_in = implode( ', ', (array) $not_in );
 
-			$output->updated = $wpdb->query( $wpdb->prepare( "UPDATE $wpdb->postmeta SET meta_key = %s WHERE meta_key = %s AND post_id NOT IN ($not_in)", $new_key, $old_key ) );
-			// $output->deleted = $delete_old ? $wpdb->query( $wpdb->prepare( "DELETE FROM $wpdb->postmeta WHERE meta_key = %s", $old_key ) ) : 0;
+			// phpcs:ignore
+			$output->updated = $wpdb->query( $wpdb->prepare( "UPDATE $wpdb->postmeta SET meta_key = %s WHERE meta_key = %s AND post_id NOT IN (%s)", $new_key, $old_key, $not_in ) );
 			$output->deleted = 0;
 			$output->ignored = count( $exclude );
 

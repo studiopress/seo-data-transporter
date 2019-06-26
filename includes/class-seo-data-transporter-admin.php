@@ -236,7 +236,7 @@ class SEO_Data_Transporter_Admin {
 
 			echo '<p>';
 			// Translators: The number is the number of database records to be converted.
-			printf( __( 'The analysis found %d compatible database records to be converted.', 'seo-data-transporter' ), $this->analysis_result->update );
+			printf( esc_html( __( 'The analysis found %d compatible database records to be converted.', 'seo-data-transporter' ), $this->analysis_result->update ) );
 			echo '</p>';
 
 		echo '</div>';

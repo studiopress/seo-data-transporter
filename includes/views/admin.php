@@ -20,7 +20,7 @@
 <p><span class="description">
 <?php esc_html_e( 'Click "Convert" to perform the conversion. After the conversion is complete, you will be alerted to how many records were converted, and how many records had to be ignored, based on the criteria above.', 'seo-data-transporter' ); ?></span></p>
 
-<form method="post" action="<?php echo admin_url( 'tools.php?page=seodt' ); ?>">
+<form method="post" action="<?php echo esc_url( admin_url( 'tools.php?page=seodt' ) ); ?>">
 <?php
 wp_nonce_field( 'seo-data-transporter' );
 

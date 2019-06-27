@@ -102,7 +102,7 @@ class SEO_Data_Transporter_Admin {
 	 */
 	public function admin() {
 
-		require_once SEO_Data_Transporter()->plugin_dir_path . 'views/admin.php';
+		require_once SEO_Data_Transporter()->plugin_dir_path . 'includes/views/admin.php';
 
 	}
 
@@ -164,7 +164,7 @@ class SEO_Data_Transporter_Admin {
 		}
 
 		// Utility object.
-		require_once SEO_Data_Transporter()->plugin_dir_path . 'class-seo-data-transporter-utility.php';
+		require_once SEO_Data_Transporter()->plugin_dir_path . 'includes/class-seo-data-transporter-utility.php';
 		$utility = new SEO_Data_Transporter_Utility( array_merge( $this->themes, $this->plugins ) );
 
 		if ( $args['analyze'] ) {

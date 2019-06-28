@@ -7,6 +7,7 @@
 
 define( 'SEO_DATA_TRANSPORTER_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SEO_DATA_TRANSPORTER_URL', plugins_url( '', __FILE__ ) );
+define( 'SEO_DATA_TRANSPORTER_VERSION', '1.1.0' );
 
 require_once SEO_DATA_TRANSPORTER_DIR . '/includes/class-seo-data-transporter.php';
 

@@ -17,7 +17,7 @@ final class SEO_Data_Transporter {
 	 *
 	 * @var $plugin_version Plugin Version
 	 */
-	public $plugin_version = '1.1.0';
+	public $plugin_version = SEO_DATA_TRANSPORTER_VERSION;
 
 	/**
 	 * The plugin textdomain, for translations.

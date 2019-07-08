@@ -1,5 +1,11 @@
 <?php
 /**
+ * Data Transporter Admin Class
+ *
+ * @package seo-data-transporter
+ */
+
+/**
  * The admin page class.
  *
  * @since 1.0.0
@@ -10,16 +16,22 @@ class SEO_Data_Transporter_Admin {
 	 * The pagehook, identifying the page elsewhere.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @var $pagehook Pagehook
 	 */
 	public $pagehook;
 
 	/**
 	 * Supported themes.
+	 *
+	 * @var $themes Themes
 	 */
 	private $themes;
 
 	/**
 	 * Supported plugins.
+	 *
+	 * @var $plugins Plugins
 	 */
 	private $plugins;
 
@@ -27,6 +39,9 @@ class SEO_Data_Transporter_Admin {
 	 * Constructor.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param Array $themes themes.
+	 * @param Array $plugins plugins.
 	 */
 	public function __construct( $themes = array(), $plugins = array() ) {
 
@@ -75,9 +90,7 @@ class SEO_Data_Transporter_Admin {
 
 		$this->pagehook = add_submenu_page( $menu['parent_slug'], $menu['page_title'], $menu['menu_title'], $menu['capability'], $this->page_id, array( $this, 'admin' ) );
 
-		// If we need to load scripts for this page
-		//add_action( "load-{$this->pagehook}", array( $this, 'scripts' ) );
-
+		// If we need to load scripts for this page.
 		add_action( "load-{$this->pagehook}", array( $this, 'process_form' ) );
 
 	}
@@ -89,7 +102,7 @@ class SEO_Data_Transporter_Admin {
 	 */
 	public function admin() {
 
-		require_once( SEO_Data_Transporter()->plugin_dir_path . 'includes/views/admin.php' );
+		require_once SEO_Data_Transporter()->plugin_dir_path . 'includes/views/admin.php';
 
 	}
 
@@ -97,19 +110,23 @@ class SEO_Data_Transporter_Admin {
 	 * Generate the select dropdown using $themes and $plugins.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param Array $name name.
+	 * @param Array $themes themes.
+	 * @param Array $plugins plugins.
 	 */
 	public function generate_select( $name, $themes, $plugins ) {
 
 		printf( '<select name="%s">', esc_attr( $name ) );
-		printf( '<option value="">%s</option>', __( 'Choose platform:', 'seo-data-transporter' ) );
+		printf( '<option value="">%s</option>', esc_html( __( 'Choose platform:', 'seo-data-transporter' ) ) );
 
-		printf( '<optgroup label="%s">', __('Themes', 'seo-data-transporter') );
+		printf( '<optgroup label="%s">', esc_attr( __( 'Themes', 'seo-data-transporter' ) ) );
 		foreach ( $themes as $platform => $data ) {
 			printf( '<option value="%s">%s</option>', esc_attr( $platform ), esc_html( $platform ) );
 		}
 		echo '</optgroup>';
 
-		printf( '<optgroup label="%s">', __('Plugins', 'seo-data-transporter') );
+		printf( '<optgroup label="%s">', esc_attr( __( 'Plugins', 'seo-data-transporter' ) ) );
 		foreach ( $plugins as $platform => $data ) {
 			printf( '<option value="%s">%s</option>', esc_attr( $platform ), esc_html( $platform ) );
 		}
@@ -125,26 +142,29 @@ class SEO_Data_Transporter_Admin {
 	 */
 	public function process_form() {
 
-		// Verify something from our form was submitted
+		// Verify something from our form was submitted.
 		if ( empty( $_REQUEST['platform_old'] ) ) {
 			return false;
 		}
 
 		check_admin_referer( 'seo-data-transporter' );
 
-		$args = wp_parse_args( $_REQUEST, array(
-			'analyze'      => 0,
-			'platform_old' => '',
-			'platform_new' => '',
-		) );
+		$args = wp_parse_args(
+			$_REQUEST,
+			array(
+				'analyze'      => 0,
+				'platform_old' => '',
+				'platform_new' => '',
+			)
+		);
 
 		if ( ! $args['platform_old'] || ! $args['platform_new'] || $args['platform_old'] === $args['platform_new'] ) {
 			add_action( 'admin_notices', array( $this, 'notice_error_select' ) );
 			return false;
 		}
 
-		// Utility object
-		require_once( SEO_Data_Transporter()->plugin_dir_path . 'includes/class-seo-data-transporter-utility.php' );
+		// Utility object.
+		require_once SEO_Data_Transporter()->plugin_dir_path . 'includes/class-seo-data-transporter-utility.php';
 		$utility = new SEO_Data_Transporter_Utility( array_merge( $this->themes, $this->plugins ) );
 
 		if ( $args['analyze'] ) {
@@ -182,7 +202,7 @@ class SEO_Data_Transporter_Admin {
 	public function notice_error_unspecified() {
 
 		$message = __( 'Something went wrong. Please make your selection and try again.', 'seo-data-transporter' );
-		printf( '<div class="notice notice-error"><p>%s</p></div>', $message );
+		printf( '<div class="notice notice-error"><p>%s</p></div>', esc_html( $message ) );
 
 	}
 
@@ -194,7 +214,7 @@ class SEO_Data_Transporter_Admin {
 	public function notice_error_select() {
 
 		$message = __( 'You must choose two different platforms before submitting.', 'seo-data-transporter' );
-		printf( '<div class="notice notice-error"><p>%s</p></div>', $message );
+		printf( '<div class="notice notice-error"><p>%s</p></div>', esc_html( $message ) );
 
 	}
 
@@ -207,15 +227,16 @@ class SEO_Data_Transporter_Admin {
 
 		echo '<div class="notice">';
 
-			printf( '<p><b>%s</b></p>', __( 'Compatible Elements:', 'seo-data-transporter' ) );
+			printf( '<p><b>%s</b></p>', esc_html( __( 'Compatible Elements:', 'seo-data-transporter' ) ) );
 			echo '<ol>';
-			foreach ( (array) $this->analysis_result->elements as $element ) {
-				printf( '<li>%s</li>', $element );
-			}
+		foreach ( (array) $this->analysis_result->elements as $element ) {
+			printf( '<li>%s</li>', esc_html( $element ) );
+		}
 			echo '</ol>';
 
 			echo '<p>';
-			printf( __( 'The analysis found %d compatible database records to be converted.', 'seo-data-transporter' ), $this->analysis_result->update );
+			// Translators: The number is the number of database records to be converted.
+			printf( esc_html( __( 'The analysis found %d compatible database records to be converted.', 'seo-data-transporter' ) ), esc_html( $this->analysis_result->update ) );
 			echo '</p>';
 
 		echo '</div>';
@@ -230,8 +251,8 @@ class SEO_Data_Transporter_Admin {
 	public function notice_success_convert() {
 
 		echo '<div class="notice notice-success">';
-			printf( '<p><b>%d</b> %s</p>', isset( $this->conversion_result->updated ) ? $this->conversion_result->updated : 0, __( 'records were updated', 'seo-data-transporter' ) );
-			printf( '<p><b>%d</b> %s</p>', isset( $this->conversion_result->ignored ) ? $this->conversion_result->ignored : 0, __( 'records were ignored', 'seo-data-transporter' ) );
+			printf( '<p><b>%d</b> %s</p>', isset( $this->conversion_result->updated ) ? esc_attr( $this->conversion_result->updated ) : 0, esc_html( __( 'records were updated', 'seo-data-transporter' ) ) );
+			printf( '<p><b>%d</b> %s</p>', isset( $this->conversion_result->ignored ) ? esc_attr( $this->conversion_result->ignored ) : 0, esc_html( __( 'records were ignored', 'seo-data-transporter' ) ) );
 		echo '</div>';
 
 	}

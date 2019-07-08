@@ -1,6 +1,11 @@
 <?php
-/*
+/**
+ * Main Plugin File
+ *
+ * @package seo-data-transporter
+ */
 
+/*
 Plugin Name: SEO Data Transporter
 Plugin URI: https://wordpress.org/plugins/seo-data-transporter/
 Description: SEO Data Transporter helps you transfer post/page specific SEO data, like custom doctitles, custom META descriptions and keywords, etc., from one platform (theme or plugin) to another.
@@ -14,4 +19,4 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 
 */
 
-require_once( plugin_dir_path( __FILE__ ) . 'seo-data-transporter.php' );
+require_once plugin_dir_path( __FILE__ ) . 'seo-data-transporter.php';

@@ -28,7 +28,7 @@
     "uri": "https://github.com/copyblogger/seo-data-transporter",
     "description": "SEO Data Transporter helps you transfer post/page specific SEO data, like custom doctitles, custom META descriptions and keywords, etc., from one platform (theme or plugin) to another.",
     "author": "StudioPress",
-    "authoruri": "http://www.studiopress.com/",
+    "authoruri": "https://www.studiopress.com/",
     "version": "1.1.1",
     "license": "GPL-2.0-or-later",
     "licenseuri": "https://www.gnu.org/licenses/gpl-2.0.html",

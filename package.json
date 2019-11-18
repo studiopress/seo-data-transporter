@@ -6,23 +6,7 @@
     "url": "https://github.com/copyblogger/seo-data-transporter"
   },
   "dependencies": {},
-  "devDependencies": {
-    "grunt": "*",
-    "grunt-autoprefixer": "*",
-    "grunt-checktextdomain": "*",
-    "grunt-contrib-cssmin": "*",
-    "grunt-contrib-imagemin": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-csscomb": "*",
-    "grunt-jsbeautifier": "*",
-    "grunt-jsvalidate": "*",
-    "grunt-phplint": "*",
-    "grunt-styledocco": "*",
-    "grunt-wp-i18n": "*",
-    "load-grunt-tasks": "*"
-  },
+  "devDependencies": {},
   "plugin": {
     "name": "SEO Data Transporter",
     "uri": "https://github.com/copyblogger/seo-data-transporter",
@@ -33,5 +17,8 @@
     "license": "GPL-2.0-or-later",
     "licenseuri": "https://www.gnu.org/licenses/gpl-2.0.html",
     "textdomain": "seo-data-transporter"
+  },
+  "scripts": {
+    "makepot": "composer makepot"
   }
 }

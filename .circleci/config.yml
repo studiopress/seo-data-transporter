@@ -10,6 +10,7 @@ jobs:
       - image: cimg/base:2021.04
     steps:
       - checkout
+      - php/install-php
       - run: php -i
       - php/install-composer
       - php/install-packages

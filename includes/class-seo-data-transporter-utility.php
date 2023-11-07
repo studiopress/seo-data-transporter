@@ -29,7 +29,6 @@ class SEO_Data_Transporter_Utility {
 	public function __construct( $platforms ) {
 
 		$this->platforms = $platforms;
-
 	}
 
 	/**
@@ -50,7 +49,7 @@ class SEO_Data_Transporter_Utility {
 
 		// Neither platform should be empty.
 		if ( empty( $this->platforms[ $old_platform ] ) || empty( $this->platforms[ $new_platform ] ) ) {
-			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+			// phpcs:ignore WordPress.NamingConventions.ValidVariableName
 			$output->WP_Error = 1;
 			return $output;
 		}
@@ -88,7 +87,6 @@ class SEO_Data_Transporter_Utility {
 		do_action( 'seodt_post_meta_analyze', $output, $old_platform, $new_platform );
 
 		return $output;
-
 	}
 
 	/**
@@ -107,7 +105,7 @@ class SEO_Data_Transporter_Utility {
 		$output = new stdClass();
 
 		if ( empty( $this->platforms[ $old_platform ] ) || empty( $this->platforms[ $new_platform ] ) ) {
-			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+			// phpcs:ignore WordPress.NamingConventions.ValidVariableName
 			$output->WP_Error = 1;
 			return $output;
 		}
@@ -144,7 +142,6 @@ class SEO_Data_Transporter_Utility {
 		do_action( 'seodt_post_meta_convert', $output, $old_platform, $new_platform, $delete_old );
 
 		return $output;
-
 	}
 
 	/**
@@ -165,7 +162,7 @@ class SEO_Data_Transporter_Utility {
 		$output = new stdClass();
 
 		if ( ! $old_key || ! $new_key ) {
-			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+			// phpcs:ignore WordPress.NamingConventions.ValidVariableName
 			$output->WP_Error = 1;
 			return $output;
 
@@ -199,7 +196,5 @@ class SEO_Data_Transporter_Utility {
 		do_action( 'seodt_meta_key_convert', $output, $old_key, $new_key, $delete_old );
 
 		return $output;
-
 	}
-
 }

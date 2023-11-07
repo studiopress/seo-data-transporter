@@ -7,7 +7,7 @@ orbs:
 jobs:
   lint:
     docker:
-      - image: wordpress:php8.2-apache
+      - image: wordpress:php8.2-fpm
     steps:
       - checkout
       - run: php -i

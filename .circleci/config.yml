@@ -7,7 +7,7 @@ orbs:
 jobs:
   lint:
     docker:
-      - image: cimg/php:8.2.12
+      - image: wordpress:php8.2-fpm-alpine
     steps:
       - checkout
       - php/install-composer

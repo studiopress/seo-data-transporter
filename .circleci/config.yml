@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   php: circleci/php@1.1
-  wp-svn: studiopress/wp-svn@0.1
+  wp-svn: studiopress/wp-svn@0.2
 
 jobs:
   lint:
@@ -30,6 +30,14 @@ workflows:
   test-deploy:
     jobs:
       - lint
+      - wp-svn/deploy:
+          requires:
+            - lint
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+            branches:
+              ignore: /.*/
       - approval-for-deploy-tested-up-to-bump:
           requires:
             - lint

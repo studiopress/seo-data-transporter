@@ -2,4 +2,6 @@
 .gitignore
 .gitattributes
 .svnignore
+.editorconfig
+README.md
 node_modules

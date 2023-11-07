@@ -8,7 +8,7 @@ workflows:
   test-deploy:
     jobs:
       - php/test:
-          test-command: phpcs
+          test-command: php -i && phpcs
       - approval-for-deploy-tested-up-to-bump:
           requires:
             - php/test

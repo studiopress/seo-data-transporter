@@ -7,10 +7,11 @@ orbs:
 jobs:
   lint:
     docker:
-      - image: php:8.2.12-apache-bullseye
+      - image: wordpress:php8.2-apache
     steps:
       - checkout
       - run: php -i
+      - php/install-composer
       - php/install-packages
       - run: phpcs
 

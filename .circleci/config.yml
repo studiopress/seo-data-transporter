@@ -10,9 +10,8 @@ jobs:
       - image: wordpress:php8.2-fpm-alpine
     steps:
       - checkout
-      - php/install-composer
-      - php/install-packages
       - run: php -i
+      - php/install-packages
       - run: phpcs
 
 workflows:

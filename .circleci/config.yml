@@ -7,7 +7,7 @@ orbs:
 jobs:
   lint:
     docker:
-      - image: php:8.2.7-apache-bullseye
+      - image: php:8.2.12-apache-bullseye
     steps:
       - checkout
       - run: php -i

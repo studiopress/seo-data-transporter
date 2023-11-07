@@ -33,11 +33,7 @@ workflows:
       - wp-svn/deploy:
           requires:
             - lint
-          filters:
-            tags:
-              only: /^\d+\.\d+\.\d+$/
-            branches:
-              ignore: /.*/
+          dry-run: true
       - approval-for-deploy-tested-up-to-bump:
           requires:
             - lint

@@ -10,7 +10,8 @@ jobs:
       - image: cimg/base:2021.04
     steps:
       - checkout
-      - php/install-php
+      - php/install-php:
+          version: '8.2'
       - run: php -i
       - php/install-composer
       - php/install-packages

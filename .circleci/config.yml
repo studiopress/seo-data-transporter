@@ -7,11 +7,9 @@ orbs:
 jobs:
   lint:
     docker:
-      - image: cimg/base:2021.04
+      - image: php:8.2.7-apache-bullseye
     steps:
       - checkout
-      - php/install-php:
-          version: '8.2'
       - run: php -i
       - php/install-composer
       - php/install-packages

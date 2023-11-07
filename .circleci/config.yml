@@ -2,13 +2,16 @@ version: 2.1
 
 orbs:
   wp-svn: studiopress/wp-svn@0.1
+  php: circleci/php@1.1
 
 jobs:
   lint:
     docker:
-      - image: cimg/php:8.2
+      - image: cimg/php:8.2.12
     steps:
       - checkout
+      - php/install-composer
+      - php/install-packages
       - run: php -i
       - run: phpcs
 

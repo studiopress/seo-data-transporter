@@ -61,6 +61,9 @@ It's relatively stable. This plugin has been in the repository since August, 201
 
 == Changelog ==
 
+= 1.1.2 =
+* Bump the minimum PHP version to 8.1.
+
 = 1.1.1 =
 * Conform to WordPress Development Standards for PHP
 

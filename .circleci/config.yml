@@ -8,6 +8,7 @@ workflows:
   test-deploy:
     jobs:
       - php/test:
+          version: '8.2'
           setup:
             - run: php -i
           test-command: phpcs

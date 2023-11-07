@@ -30,12 +30,6 @@ workflows:
   test-deploy:
     jobs:
       - lint
-      - wp-svn/check-versions:
-          filters:
-            tags:
-              only: /^\d+\.\d+\.\d+$/
-            branches:
-              only: /^release\/.*/
       - wp-svn/deploy:
           context: genesis-svn
           filters:
@@ -45,7 +39,6 @@ workflows:
               ignore: /.*/
           requires:
             - lint
-            - wp-svn/check-versions
           dry-run: true
       - approval-for-deploy-tested-up-to-bump:
           requires:

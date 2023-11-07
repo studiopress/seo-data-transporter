@@ -37,6 +37,12 @@ workflows:
             branches:
               only: /^release\/.*/
       - wp-svn/deploy:
+          context: genesis-svn
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+            branches:
+              ignore: /.*/
           requires:
             - lint
             - wp-svn/check-versions

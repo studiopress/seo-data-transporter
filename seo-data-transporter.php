@@ -25,7 +25,6 @@ function seo_data_transporter() {
 	}
 
 	return $object;
-
 }
 
 /**

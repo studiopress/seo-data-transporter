@@ -15,7 +15,6 @@
 function seodt_init() {
 
 	_deprecated_function( __FUNCTION__, '1.0.0', 'SEO_Data_Transporter::init()' );
-
 }
 
 /**
@@ -26,7 +25,6 @@ function seodt_init() {
 function seodt_activation_hook() {
 
 	_deprecated_function( __FUNCTION__, '1.0.0' );
-
 }
 
 /**
@@ -45,7 +43,6 @@ function seodt_meta_key_convert( $old_key, $new_key, $delete_old ) {
 	$utility = SEO_Data_Transporter_Utility( SEO_Data_Transporter()->get_supported_platforms() );
 
 	return $utility->meta_key_convert( $old_key, $new_key, $delete_old );
-
 }
 
 /**
@@ -64,7 +61,6 @@ function seodt_post_meta_convert( $old_platform, $new_platform, $delete_old ) {
 	$utility = SEO_Data_Transporter_Utility( SEO_Data_Transporter()->get_supported_platforms() );
 
 	return $utility->convert( $old_platform, $new_platform, $delete_old );
-
 }
 
 /**
@@ -82,7 +78,6 @@ function seodt_post_meta_analyze( $old_platform, $new_platform ) {
 	$utility = SEO_Data_Transporter_Utility( SEO_Data_Transporter()->get_supported_platforms() );
 
 	return $utility->analyze( $old_platform, $new_platform, $delete_old );
-
 }
 
 /**
@@ -93,7 +88,6 @@ function seodt_post_meta_analyze( $old_platform, $new_platform ) {
 function seodt_settings_init() {
 
 	_deprecated_function( __FUNCTION__, '1.0.0' );
-
 }
 
 /**
@@ -105,7 +99,6 @@ function seodt_settings_init() {
 function seodt_action() {
 
 	_deprecated_function( __FUNCTION__, '1.0.0' );
-
 }
 
 /**
@@ -116,5 +109,4 @@ function seodt_action() {
 function seodt_admin() {
 
 	_deprecated_function( __FUNCTION__, '1.0.0' );
-
 }

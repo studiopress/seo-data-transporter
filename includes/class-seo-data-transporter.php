@@ -215,7 +215,6 @@ final class SEO_Data_Transporter {
 				'Redirect URI'     => '_yoast_wpseo_redirect',
 			),
 		);
-
 	}
 
 	/**
@@ -238,7 +237,6 @@ final class SEO_Data_Transporter {
 		 * @since 0.9.10
 		 */
 		do_action( 'seodt_init' );
-
 	}
 
 	/**
@@ -258,7 +256,6 @@ final class SEO_Data_Transporter {
 	public function includes() {
 
 		require_once $this->plugin_dir_path . 'includes/deprecated.php';
-
 	}
 
 	/**
@@ -282,7 +279,6 @@ final class SEO_Data_Transporter {
 			require_once $this->plugin_dir_path . 'includes/class-seo-data-transporter-cli.php';
 			WP_CLI::add_command( 'seodt', 'SEO_Data_Transporter_CLI' );
 		}
-
 	}
 
 	/**
@@ -311,5 +307,4 @@ final class SEO_Data_Transporter {
 	public function get_supported_platforms() {
 		return array_merge( $this->themes, $this->plugins );
 	}
-
 }

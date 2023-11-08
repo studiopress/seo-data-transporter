@@ -102,7 +102,5 @@ class SEO_Data_Transporter_CLI extends WP_CLI_Command {
 
 		// Translators: Number is the number of records converted.
 		WP_CLI::success( sprintf( __( '%d records were successfully converted.', 'seo-data-transporter' ), $result->updated ) );
-
 	}
-
 }

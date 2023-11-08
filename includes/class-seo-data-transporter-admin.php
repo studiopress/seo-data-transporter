@@ -47,7 +47,6 @@ class SEO_Data_Transporter_Admin {
 
 		$this->themes  = $themes;
 		$this->plugins = $plugins;
-
 	}
 
 	/**
@@ -68,7 +67,6 @@ class SEO_Data_Transporter_Admin {
 		);
 
 		add_action( 'admin_menu', array( $this, 'create' ) );
-
 	}
 
 	/**
@@ -92,7 +90,6 @@ class SEO_Data_Transporter_Admin {
 
 		// If we need to load scripts for this page.
 		add_action( "load-{$this->pagehook}", array( $this, 'process_form' ) );
-
 	}
 
 	/**
@@ -103,7 +100,6 @@ class SEO_Data_Transporter_Admin {
 	public function admin() {
 
 		require_once SEO_Data_Transporter()->plugin_dir_path . 'includes/views/admin.php';
-
 	}
 
 	/**
@@ -132,7 +128,6 @@ class SEO_Data_Transporter_Admin {
 		}
 		echo '</optgroup>';
 		echo '</select>';
-
 	}
 
 	/**
@@ -191,7 +186,6 @@ class SEO_Data_Transporter_Admin {
 		add_action( 'admin_notices', array( $this, 'notice_success_convert' ) );
 
 		return true;
-
 	}
 
 	/**
@@ -203,7 +197,6 @@ class SEO_Data_Transporter_Admin {
 
 		$message = __( 'Something went wrong. Please make your selection and try again.', 'seo-data-transporter' );
 		printf( '<div class="notice notice-error"><p>%s</p></div>', esc_html( $message ) );
-
 	}
 
 	/**
@@ -215,7 +208,6 @@ class SEO_Data_Transporter_Admin {
 
 		$message = __( 'You must choose two different platforms before submitting.', 'seo-data-transporter' );
 		printf( '<div class="notice notice-error"><p>%s</p></div>', esc_html( $message ) );
-
 	}
 
 	/**
@@ -240,7 +232,6 @@ class SEO_Data_Transporter_Admin {
 			echo '</p>';
 
 		echo '</div>';
-
 	}
 
 	/**
@@ -254,7 +245,5 @@ class SEO_Data_Transporter_Admin {
 			printf( '<p><b>%d</b> %s</p>', isset( $this->conversion_result->updated ) ? esc_attr( $this->conversion_result->updated ) : 0, esc_html( __( 'records were updated', 'seo-data-transporter' ) ) );
 			printf( '<p><b>%d</b> %s</p>', isset( $this->conversion_result->ignored ) ? esc_attr( $this->conversion_result->ignored ) : 0, esc_html( __( 'records were ignored', 'seo-data-transporter' ) ) );
 		echo '</div>';
-
 	}
-
 }

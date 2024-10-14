@@ -42,7 +42,7 @@ function seo_data_transporter_check_for_upgrades() {
 		'plugin_basename' => plugin_basename( dirname( __FILE__ ) . '/plugin.php' ),
 	);
 
-	require_once __DIR__ . '/includes/class-genesis-simple-menus-plugin-updater.php';
+	require_once __DIR__ . '/includes/class-seo-data-transporter-plugin-updater.php';
 	new SEO_Data_Transporter_Plugin_Updater( $properties );
 }
 add_action( 'admin_init', 'seo_data_transporter_check_for_upgrades' );

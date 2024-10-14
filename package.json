@@ -6,7 +6,10 @@
     "url": "https://github.com/copyblogger/seo-data-transporter"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "adm-zip": "^0.5.16",
+    "minimatch": "^10.0.1"
+  },
   "plugin": {
     "name": "SEO Data Transporter",
     "uri": "https://github.com/copyblogger/seo-data-transporter",
@@ -19,6 +22,7 @@
     "textdomain": "seo-data-transporter"
   },
   "scripts": {
-    "makepot": "composer makepot"
+    "makepot": "composer makepot",
+    "zip": "node scripts/create-zip.js"
   }
 }

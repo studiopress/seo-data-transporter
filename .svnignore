@@ -1,5 +1,16 @@
+.editorconfig
 .git
 .gitignore
 .gitattributes
 .svnignore
+.DS_Store
+.nvmrc
+.circleci/
+package.json
+package-lock.json
+composer.json
+composer.lock
 node_modules
+vendor/
+scripts/
+*.zip

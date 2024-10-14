@@ -63,6 +63,7 @@ It's relatively stable. This plugin has been in the repository since August, 201
 
 = 1.1.2 =
 * SEO Data Transporter now uses its own update mechanism from WP Engine servers.
+* Fix deprecation warnings relating to SEO_Data_Transporter_Admin.
 
 = 1.1.1 =
 * Conform to WordPress Development Standards for PHP

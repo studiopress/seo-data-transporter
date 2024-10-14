@@ -36,6 +36,20 @@ class SEO_Data_Transporter_Admin {
 	private $plugins;
 
 	/**
+	 * Page ID
+	 *
+	 * @var string
+	 */
+	private $page_id;
+
+	/**
+	 * Menu options.
+	 *
+	 * @var array
+	 */
+	private $menu_ops;
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 1.0.0

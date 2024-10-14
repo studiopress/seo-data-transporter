@@ -31,3 +31,18 @@ function seo_data_transporter() {
  * Initialize the object on `plugins_loaded`.
  */
 add_action( 'plugins_loaded', array( SEO_Data_Transporter(), 'init' ) );
+
+/**
+ * Initialize checking of plugin updates from WP Engine.
+ */
+function seo_data_transporter_check_for_upgrades() {
+	$properties = array(
+		'plugin_slug'     => 'seo-data-transporter',
+		// phpcs:ignore
+		'plugin_basename' => plugin_basename( dirname( __FILE__ ) . '/plugin.php' ),
+	);
+
+	require_once __DIR__ . '/includes/class-genesis-simple-menus-plugin-updater.php';
+	new SEO_Data_Transporter_Plugin_Updater( $properties );
+}
+add_action( 'admin_init', 'seo_data_transporter_check_for_upgrades' );

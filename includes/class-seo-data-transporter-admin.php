@@ -50,6 +50,20 @@ class SEO_Data_Transporter_Admin {
 	private $menu_ops;
 
 	/**
+	 * Analysis result.
+	 *
+	 * @var object
+	 */
+	private $analysis_result;
+
+	/**
+	 * Conversion result.
+	 *
+	 * @var object
+	 */
+	private $conversion_result;
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 1.0.0

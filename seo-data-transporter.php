@@ -2,6 +2,8 @@
 /**
  * Main Data Transporter Class
  *
+ * Version: 1.1.1
+ *
  * @package seo-data-transporter
  */
 

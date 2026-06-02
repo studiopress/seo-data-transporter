@@ -3,8 +3,8 @@ Contributors: nathanrice, studiopress, mazedulislamkhan, joostdevalk
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5553118
 Tags: seo, genesis, genesiswp, thesis, thesiswp, headway, headwaywp, builder, frugal, hybrid, woothemes, all in one seo, headspace, platinum seo
 Requires at least: 4.7.3
-Tested up to: 6.9
-Stable tag: 1.1.2
+Tested up to: 7.0
+Stable tag: 1.1.1
 
 This plugin allows you to transfer your inputs SEO data from one theme/plugin to another.
 

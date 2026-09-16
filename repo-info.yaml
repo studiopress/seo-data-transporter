@@ -4,7 +4,6 @@ metadata:
   name: seo-data-transporter
 spec:
   type: repository
-  owner: team-gen
   engineeringExcellence:
     exemptedChecks:
       dependabotAutomationPresent:
